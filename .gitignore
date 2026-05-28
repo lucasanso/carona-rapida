@@ -1,0 +1,12 @@
+.env 
+venv/
+.ENV
+.venv/
+# .dist/
+
+config.yaml
+db-data/
+
+__pycache__/
+
+init.sql
