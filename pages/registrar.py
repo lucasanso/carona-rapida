@@ -31,7 +31,7 @@ st.title("Caronas UFG")
 lista = []
 
 try:
-    resposta = get("http://localhost:8000/passageiros")
+    resposta = get("http://fastapi/passageiros")
     if resposta.status_code == 200:
         dados = resposta.json()
         lista = [p[1] for p in dados.get('passengers', [])]
@@ -65,7 +65,7 @@ with st.form("formulario", clear_on_submit=False):
         st.session_state.sucesso_api = None
 
         try:
-            response = post("http://localhost:8000/caronas/registrar", json=payload)
+            response = post("http://fastapi/caronas/registrar", json=payload)
             if response.status_code == 200:
                 st.toast("Carona registrada com sucesso!")
                 sleep(1.5)

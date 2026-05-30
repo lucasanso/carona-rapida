@@ -27,7 +27,7 @@ with st.container(border=True):
                     "telefone": telefone,
                 }
 
-                response = post("http://localhost:8000/passageiros/cadastrar", json=payload)
+                response = post("http://fastapi/passageiros/cadastrar", json=payload)
                 
                 if senha == senha_confirm and response.status_code == 200:
                     st.success("Cadastro realizado com sucesso!")
