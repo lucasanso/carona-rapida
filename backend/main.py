@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import caronas, passageiros
+from routers import caronas_api, passageiros_api
 
 app = FastAPI(
     title="API Caronas UFG",
@@ -16,8 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(caronas.router)
-app.include_router(passageiros.router)
+app.include_router(caronas_api.router)
+app.include_router(passageiros_api.router)
 
 @app.get("/")
 def raiz_api():
