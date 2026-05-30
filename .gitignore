@@ -6,7 +6,7 @@ venv/
 
 config.yaml
 db-data/
-
+data/
 __pycache__/
 
 init.sql

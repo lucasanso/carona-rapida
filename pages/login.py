@@ -32,7 +32,7 @@ with st.container(border=True):
                         "senha": senha
                     }
                     
-                    response = post("http://localhost:8000/passageiros/login", json=payload)
+                    response = post("http://fastapi/passageiros/login", json=payload)
 
                     if response.status_code == 200:
                         dados = response.json()

@@ -24,7 +24,7 @@ class PostgresConnect:
                 user=os.getenv("POSTGRES_USER"),
                 password=os.getenv("POSTGRES_PASS"),
                 database=os.getenv("POSTGRES_DB"),
-                host="localhost"
+                host="carona-db"
             )
         except Error as e:
             print(f"[ERRO] Falha crítica ao conectar no PostgreSQL: {e}")
