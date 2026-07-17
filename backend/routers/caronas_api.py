@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from psycopg2 import connect, Error, errors
 import os
 from dotenv import load_dotenv
-from init_db import PostgresConnect
+from init_db import PostgresInit
 
 load_dotenv()
 
@@ -41,7 +41,7 @@ MAPA_PASSAGEIROS = {
 
 @router.get("/cria-banco")
 def criar_banco():
-    executar = PostgresConnect()
+    executar = PostgresInit()
     executar()
     
 
