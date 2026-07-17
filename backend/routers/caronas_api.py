@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from psycopg2 import connect, Error, errors
 import os
 from dotenv import load_dotenv
+from init_db import PostgresConnect
 
 load_dotenv()
 
@@ -36,6 +37,13 @@ MAPA_PASSAGEIROS = {
     "Beatriz": 3, "Luiz Fernando": 10, "Kassia Fernanda": 2,
     "Patrick": 4, "Melqui": 5, "Myllena": 6, "Lucas": 1, "Ana Rute": 2
 }
+
+
+@router.get("/cria-banco")
+def criar_banco():
+    executar = PostgresConnect()
+    executar()
+    
 
 @router.post("/registrar")
 def cadastrar_carona(carona: CaronaSchema):
